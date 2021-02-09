@@ -1,0 +1,479 @@
+/* ==========================================================================
+   Product List shortcode styles - begin
+   ========================================================================== */
+
+.eltdf-pl-holder {
+    @include eltdfRelativeHolderLayout();
+
+    .eltdf-pli {
+        position: relative;
+        display: inline-block;
+        vertical-align: top;
+        width: 100%;
+        padding: 0;
+        z-index: 100;
+        box-sizing: border-box;
+
+	    .eltdf-pli-title {
+		    margin: 0 0 4px;
+	    }
+	
+	    .eltdf-pli-category {
+		    margin: 11px 0 3px;
+	    }
+
+        .eltdf-pli-excerpt {
+            color: $default-text-color;
+	        line-height: 1.3em;
+            margin: 11px 0 3px;
+        }
+
+	    .eltdf-pli-rating-holder {
+		    @include eltdfRelativeHolderLayout();
+		    line-height: 1;
+		    margin: 10px 0 3px;
+	    }
+
+	    .eltdf-pli-rating {
+		    position: relative;
+		    display: inline-block;
+		    vertical-align: middle;
+		    font-family: "ElegantIcons";
+		    font-size: 12px;
+		    line-height: 1;
+		    letter-spacing: 2px;
+		    color: $default-text-color;
+		    overflow: hidden;
+		    -webkit-font-smoothing: antialiased;
+
+		    &:before {
+			    content: "\e031\e031\e031\e031\e031";
+		    }
+
+		    span {
+			    position: absolute;
+			    top: 0;
+			    left: 0;
+			    overflow: hidden;
+
+			    &:before {
+				    content: "\e033\e033\e033\e033\e033";
+			    }
+		    }
+	    }
+
+        .eltdf-pli-price {
+            display: block;
+            color: $default-heading-color;
+    		font-weight: 800;
+    		font-family: $second-font;
+            line-height: 1;
+            margin: 14px 0 0;
+            
+            * {
+                font-size: inherit;
+                line-height: inherit;
+            }
+            
+            del {
+				position: relative;
+				display: inline-block;
+				vertical-align: top;
+				color: #d1d1d1;
+				text-decoration: none;
+				overflow: hidden;
+				margin: 0 6px 0 0;
+
+    			&:after{
+    				content: '';
+    				position: absolute;
+					left: 0;
+					top: 50%;
+					right: 0;
+    				border-bottom: 1px solid #333;
+    				@include eltdfTransform(rotate(-16deg));
+    			}
+            }
+            
+            ins {
+                text-decoration: none;
+            }
+        }
+    }
+
+    .eltdf-pli-inner {
+        position: relative;
+        display: inline-block;
+        vertical-align: middle;
+        overflow: hidden;
+
+        &:hover {
+
+            .eltdf-pli-text {
+                opacity: 1;
+            }
+        }
+
+        .touch & {
+            cursor: pointer;
+        }
+
+        .eltdf-pli-image {
+            @include eltdfRelativeHolderLayout();
+
+            img {
+                display: block;
+                width: 100%;
+            }
+
+            .eltdf-pli-onsale,
+            .eltdf-pli-out-of-stock {
+		        position: absolute;
+		        display: block;
+		        top: 0;
+		        right: 0;
+		        width: 77px;
+		        height: 67px;
+		        color: #fff;
+		        font-size: 17px;
+		        line-height: 67px;
+		        font-weight: 800;
+		        font-family: $second-font;
+		        padding: 0 16px;
+		        margin: 0;
+		        text-align: center;
+		        z-index: 100;
+		        @include eltdfTransform(translateZ(0));
+		        box-sizing: border-box;
+
+
+		        &:before{
+		        	content: '';
+					position: absolute;
+					right: 0;
+					top: 0;
+					border-bottom: 127px solid transparent;
+					border-right: 127px solid $first-main-color;
+					z-index: -1;
+		        }
+            }
+
+        }
+            
+        .eltdf-pli-text {
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            background-color: rgba($default-heading-color, 0.6);
+            box-sizing: border-box;
+            @include eltdfTransition(all .3s);
+			padding: 0;
+        }
+
+        .eltdf-pli-text-outer {
+            position: relative;
+            display: table;
+            width: 100%;
+            height: 100%;
+        }
+
+        .eltdf-pli-text-inner {
+            position: relative;
+            display: table-cell;
+            width: 100%;
+            height: 100%;
+            vertical-align: middle;
+            text-align: center;
+
+            .eltdf-pli-title,
+            .eltdf-pli-rating,            
+            .eltdf-pli-category a,
+            .eltdf-pli-excerpt,{
+                color: #fff;
+                text-align: center;
+            }
+
+            .eltdf-pli-category a{
+            	position: relative;
+            	z-index: 15;
+            }
+
+            .eltdf-pli-price {
+                color: #fff;
+
+                del {
+                    color: #ccc;
+                }
+            }
+
+	        .eltdf-pli-add-to-cart {
+		        margin: 20px 0 0;
+
+		        &.eltdf-default-skin {
+
+			        .button,
+			        .added_to_cart {
+				        @include eltdfButtonSolidColor();
+						text-align: center;
+
+				        &:hover {
+				            @include eltdfButtonSolidHoverColor();
+				        }
+			        }
+		        }
+
+		        &.eltdf-light-skin {
+
+			        .button,
+			        .added_to_cart {
+				        color: $default-heading-color;
+				        background-color: #fff;
+
+				        &:hover {
+					        color: #fff;
+					        background-color: $first-main-color;
+				        }
+			        }
+		        }
+		
+		        &.eltdf-dark-skin {
+			
+			        .button,
+			        .added_to_cart {
+				        color: #fff;
+				        background-color: $default-heading-color;
+				
+				        &:hover {
+					        color: #fff;
+					        background-color: $first-main-color;
+				        }
+			        }
+		        }
+	        }
+
+            .button,
+            .added_to_cart {
+	            @include eltdfButtonDefaultStyle();
+	            @include eltdfButtonMediumParams();
+	            white-space: nowrap;
+	            z-index: 3;
+            }
+
+            .button.added {
+                display: none;
+            }
+        }
+
+	    .eltdf-pli-link {
+		    position: absolute;
+		    top: 0;
+		    left: 0;
+		    display: inline-block;
+		    width: 100%;
+		    height: 100%;
+	    }
+    }
+
+    .eltdf-pli-text-wrapper {
+        @include eltdfRelativeHolderLayout();
+        margin: 22px 0 38px;
+        text-align: left;
+    }
+
+    &.eltdf-info-below-image{
+    	.eltdf-pli-inner{
+    		.eltdf-pli-text{
+		    	background-color: rgba(239,233,233,.3);
+		    }
+
+		    .eltdf-pli-add-to-cart{
+            	position: absolute;
+            	top: 101%;
+            	left: 0;
+            	width: 100%;
+            	margin: 0;
+
+            	a.button,
+            	.added_to_cart{
+            		width: 100%;
+            		text-align: center;
+        			padding: 20px 49px;
+            		@include eltdfTransform(translateY(0));
+            		-webkit-transition: -webkit-transform .2s ease-out;
+            		transition: transform .2s ease-out;
+            		margin: 0;
+            	}
+            }
+
+	        &:hover {
+	            
+	            .eltdf-pli-text,
+	            .eltdf-pli-image:after{
+	                opacity: 1;
+	            }
+
+	            .eltdf-pli-add-to-cart a.button,
+	            .eltdf-pli-add-to-cart .added_to_cart{
+	        		@include eltdfTransform(translateY(-100%));
+	            }
+	        }
+		}
+
+    }
+	
+	&.eltdf-product-info-light {
+		
+		.eltdf-pli-inner {
+			
+			.eltdf-pli-text-inner {
+				
+				.eltdf-pli-title,
+				.eltdf-pli-category,
+				.eltdf-pli-excerpt,
+				.eltdf-pli-rating {
+					color: #fff;
+				}
+				
+				.eltdf-pli-price {
+					color: #fff;
+					
+					del {
+						color: #ccc;
+					}
+				}
+			}
+		}
+	}
+	
+	&.eltdf-product-info-dark {
+		
+		.eltdf-pli-inner {
+			
+			.eltdf-pli-text-inner {
+				
+				.eltdf-pli-title,
+				.eltdf-pli-category,
+				.eltdf-pli-excerpt,
+				.eltdf-pli-rating {
+					color: $default-heading-color;
+				}
+				
+				.eltdf-pli-price {
+					color: $default-heading-color;
+				}
+			}
+		}
+	}
+	
+	$columns_space_label: ('no', 'tiny', 'small', 'normal');
+	$columns_space_width: (0, 5, 10, 15);
+	
+	@for $i from 0 to length($columns_space_label) {
+		&.eltdf-#{nth($columns_space_label,$i+1)}-space {
+			$column_width: nth($columns_space_width,$i+1);
+			$column_width_margin: $column_width * 2;
+			
+			.eltdf-pl-outer {
+				@if($column_width == 0) {
+					margin: 0;
+				} @else {
+					margin: 0 -#{$column_width}px;
+				}
+				
+				.eltdf-pli {
+					padding: 0 #{$column_width}px;
+					margin: 0 0 #{$column_width_margin}px;
+				}
+			}
+		}
+	}
+	
+	/*************** Standard Layout - begin ***************/
+	
+	&.eltdf-standard-layout {
+		
+		.eltdf-pli {
+			float: left;
+		}
+		
+		&.eltdf-normal-space {
+			margin: 0 0 -30px;
+		}
+		
+		&.eltdf-small-space {
+			margin: 0 0 -20px;
+		}
+		
+		&.eltdf-tiny-space {
+			margin: 0 0 -10px;
+		}
+		
+		$standard_list_columns: ('two', 'three', 'four', 'five', 'six');
+		
+		@for $i from 0 to length($standard_list_columns) {
+			&.eltdf-#{nth($standard_list_columns,$i+1)}-columns {
+				$column_width: 100%/($i+2);
+				
+				.eltdf-pli {
+					width: $column_width;
+					
+					@media only screen and (min-width: $ipad-landscape-plus-pixel) {
+						
+						&:nth-child(#{$i+2}n+1) {
+							clear: both;
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	/*************** Standard Layout - end ***************/
+	
+	/*************** Masonry Layout - begin ***************/
+	
+	&.eltdf-masonry-layout {
+		
+		.eltdf-pl-outer {
+			opacity: 0;
+		}
+		
+		.eltdf-pl-sizer {
+			width: 100%;
+		}
+		
+		.eltdf-pl-gutter {
+			width: 0;
+		}
+		
+		.eltdf-pli-inner {
+			width: 100%;
+		}
+		
+		$masonry_list_columns: ('two', 'three', 'four', 'five', 'six');
+		
+		@for $i from 0 to length($masonry_list_columns) {
+			&.eltdf-#{nth($masonry_list_columns,$i+1)}-columns {
+				$column_width: 100%/($i+2);
+				
+				.eltdf-pli,
+				.eltdf-pl-sizer {
+					width: $column_width;
+				}
+				
+				.eltdf-pli.eltdf-woo-image-large-width {
+					width: $column_width*2;
+				}
+			}
+		}
+	}
+	
+	/*************** Masonry Layout - end ***************/
+}
+/* ==========================================================================
+   Product List shortcode styles - end
+   ========================================================================== */

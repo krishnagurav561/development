@@ -1,0 +1,235 @@
+/* ==========================================================================
+   Blog Single Standard style - begin
+   ========================================================================== */
+
+.eltdf-blog-holder.eltdf-blog-single {
+
+    &.eltdf-blog-single-standard {
+    
+        article {
+            margin: 0 0 30px;
+        
+            .eltdf-post-heading {
+                margin-bottom: 34px;
+            }
+        
+            .eltdf-post-title {
+                margin: 0 0 26px;
+            }
+        
+            .eltdf-post-text {
+                padding: 0 0 21px;
+                border-bottom: 1px solid $default-border-color;
+            }
+        
+            .eltdf-post-info-top {
+            	font-size: 15px;
+            	font-weight: 600;
+                margin-bottom: 7px;
+	
+	            > div {
+		            position: relative;
+		            display: inline-block;
+		            margin-left: 2px;
+		
+		            &:first-child {
+			            margin-left: 0;
+		            }
+		
+		            span {
+			            color: $default-heading-color;
+		            }
+	            }
+            }
+        
+            .eltdf-post-info-bottom {
+                @include eltdfRelativeHolderLayout();
+                margin: 31px 0 0;
+            
+                .eltdf-post-info-bottom-left,
+                .eltdf-post-info-bottom-right {
+                    position: relative;
+                    display: inline-block;
+                    width: 50%;
+                    float: left;
+                }
+            
+                .eltdf-post-info-bottom-left {
+                
+                    > div {
+                        position: relative;
+                        display: inline-block;
+                        color: $default-text-color;
+                    
+                        a {
+                            color: inherit;
+                        
+                            &:hover {
+                                color: $default-heading-color;
+                            }
+                        }
+                    }
+                }
+            
+                .eltdf-post-info-bottom-right {
+                    text-align: right;
+                
+                    > div {
+                        position: relative;
+                        display: inline-block;
+                        color: $default-heading-color;
+                        font-size: 15px;
+                        font-weight: 600;
+                        margin-left: 5px;
+                    
+                        &:first-child {
+                            margin-left: 0;
+                        }
+                    }
+                }
+            }
+        
+            .eltdf-tags a{
+            	margin: 0 5px;
+
+            	&:first-child{
+            		margin-left: 0;
+            	}
+
+            	&:last-child{
+            		margin-right: 0;
+            	}
+            }
+
+			&.format-quote.has-post-thumbnail,
+			&.format-link.has-post-thumbnail{
+				.eltdf-post-text{
+					position: relative;
+					background-position: center;
+					background-size: cover;
+
+					.eltdf-post-text-inner{
+						position: relative;
+						z-index: 5;
+					}
+
+					&:after{
+						content: '';
+						@include eltdfAbsoluteHolderLayout();
+						background-color: transparentize($first-main-color, 0.2);
+					}
+				}
+			}
+			
+            &.format-link {
+
+				.eltdf-post-content{
+					margin-bottom: 29px;
+				}
+            
+                .eltdf-post-text {
+	                padding: 43px 78px 24px;
+	                background-color: #333;
+	                border-bottom: none;
+                }
+	            
+                .eltdf-post-text-main {
+                    text-align: left;
+                }
+
+                .eltdf-post-mark{
+                	position: relative;
+                	color: #fff;
+                    font-size: 24px;
+                    margin-bottom: 10px;
+                }
+	            
+                .eltdf-post-title {
+                	color: #fff;
+                    margin-bottom: 0;
+
+                    a:hover{
+                    	color: #333;
+                    }
+                }
+
+ 	           	.eltdf-post-info-top {
+ 	           		color: #fff;
+ 	           		padding-top: 77px;
+
+ 	           		a,
+ 	           		span{
+ 	           			color: #fff;
+ 	           		}
+ 	           	}
+
+ 	           	.eltdf-post-additional-content{
+	                border-bottom: 1px solid $default-border-color;
+	            }
+            }
+        
+            &.format-quote {
+            
+				.eltdf-post-content{
+					margin-bottom: 29px;
+				}
+				
+                .eltdf-post-text {
+	                padding: 50px 78px 24px;
+	                background-color: #333;
+	                border-bottom: none;
+                }
+	            
+                .eltdf-post-text-main {
+                    text-align: left;
+                }
+
+                .eltdf-post-mark{
+                	position: relative;
+                	width: 30px;
+                	height: 30px;
+                }
+
+                .eltdf-quote-mark {
+                	position: absolute;
+                	top: 50%;
+                    font-size: 70px;
+                    color: #fff;
+                    font-family: $second-font;
+                }
+	            
+                .eltdf-post-title {
+                	color: #fff;
+                    margin-bottom: 0;
+
+                    a:hover{
+                    	color: #333;
+                    }
+                }
+	            
+                .eltdf-quote-author {
+	                display: inline-block;
+	                margin: 19px 0 0;
+	                color: #fff;
+                }
+
+ 	           	.eltdf-post-info-top {
+ 	           		color: #fff;
+ 	           		padding-top: 58px;
+
+ 	           		a,
+ 	           		span{
+ 	           			color: #fff;
+ 	           		}
+ 	           	}
+ 	           	
+ 	           	.eltdf-post-additional-content{
+	                border-bottom: 1px solid $default-border-color;
+	            }
+            }
+        }
+    }
+}
+/* ==========================================================================
+   Blog Single Standard style - end
+   ========================================================================== */

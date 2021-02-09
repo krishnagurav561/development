@@ -1,0 +1,45 @@
+/* ==========================================================================
+   Header Standard style - begin
+   ========================================================================== */
+.eltdf-header-standard {
+
+	.eltdf-menu-area {
+		background-color: #fff;
+		box-sizing: border-box;
+		border-top: 2px solid rgba(255,255,255,.1);
+		border-bottom: 2px solid rgba(255,255,255,.1);
+
+		.eltdf-position-center-inner{
+			height: 100%;
+		}
+	}
+
+	.eltdf-page-header .eltdf-position-right-inner{
+		height: 100%;
+
+		&:before{
+			content: '';
+			display: inline-block;
+			vertical-align: middle;
+			height: 100%;
+		}
+	}
+
+	&.eltdf-light-header{
+
+		.eltdf-menu-area {
+
+			.eltdf-main-menu{
+
+				> ul > li > a:after{
+					background-color: #fff;
+				}
+			}
+		}
+	}
+}
+
+
+/* ==========================================================================
+   Header Standard Extended style - end
+   ========================================================================== */

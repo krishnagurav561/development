@@ -1,0 +1,86 @@
+/* ==========================================================================
+   Header Box style - begin
+   ========================================================================== */
+
+.eltdf-header-box {
+	
+    .eltdf-top-bar {
+        height: 55px;
+	    background-color: transparent;
+    }
+
+    .eltdf-page-header {
+
+        .eltdf-menu-area {
+            height: 111px;
+            padding-top: 18px;
+            box-sizing: border-box;
+	    	background-color: transparent;
+
+            .eltdf-logo-wrapper a {
+                max-height: 93px;
+            }
+
+            .eltdf-vertical-align-containers {
+                background-color: #fff;
+            }
+
+            .eltdf-grid .eltdf-vertical-align-containers {
+                box-sizing: initial;
+                margin: 0 -35px;
+                padding: 0 35px !important;
+            }
+
+	            
+            .eltdf-position-center-inner {
+                height: 100%;            
+            }
+
+            .eltdf-position-right-inner {
+                height: 100%;
+
+				&:before{
+					content: '';
+					display: inline-block;
+					vertical-align: middle;
+					height: 100%;
+				}
+            }
+
+        }
+    }
+
+    .eltdf-drop-down .wide .second > .inner > ul {
+        width: 1170px; //1100 + 70, 70 is 35 of padding on each side
+    }
+
+    &.eltdf-grid-1000 .eltdf-drop-down .wide .second > .inner > ul {
+        width: $grid-width-1000+70;
+    }
+
+    &.eltdf-grid-800 .eltdf-drop-down .wide .second > .inner > ul {
+        width: $grid-width-800+70;
+    }
+
+    &.eltdf-top-bar-enabled{
+
+		.eltdf-page-header .eltdf-menu-area {
+            height: 93px;
+			padding-top: 0;
+		}
+    }
+}
+
+@media only screen and (min-width: 1400px) {
+	.eltdf-header-box.eltdf-grid-1300 .eltdf-drop-down .wide .second > .inner > ul {
+		width: $grid-width-1300+70;
+	}
+}
+@media only screen and (min-width: 1300px) {
+	.eltdf-header-box.eltdf-grid-1200 .eltdf-drop-down .wide .second > .inner > ul {
+		width: $grid-width-1200+70;
+	}
+}
+/* ==========================================================================
+   Header Box style - end
+   ========================================================================== */

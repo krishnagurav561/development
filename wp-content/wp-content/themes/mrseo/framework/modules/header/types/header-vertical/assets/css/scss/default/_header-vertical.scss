@@ -1,0 +1,132 @@
+/* ==========================================================================
+   Header Vertical style - begin
+   ========================================================================== */
+
+$vertical-menu-width: 312px;
+
+@import 'blocks/header-vertical-navigation.scss';
+@import 'blocks/header-vertical-widgets.scss';
+
+.eltdf-header-vertical {
+
+    .eltdf-content,
+    footer {
+        padding-left: $vertical-menu-width;
+        box-sizing: border-box;
+    }
+
+    .eltdf-vertical-menu-area {
+        position: fixed;
+	    top: 0;
+	    left: 0;
+	    width: $vertical-menu-width;
+        height: 100%;
+        padding: 60px 45px 10px;
+        background-color: transparent;
+        outline: none;
+        z-index: 101;
+        -webkit-backface-visibility: hidden;
+        box-sizing: border-box;
+	    
+	    &.eltdf-with-scroll {
+		    overflow: hidden;
+	    }
+    }
+
+    .eltdf-vertical-menu-area-inner {
+        @include eltdfRelativeHolderLayout();
+        height: 100%;
+
+        &.eltdf-vertical-align-left {
+            text-align: left;
+        }
+
+        &.eltdf-vertical-align-center {
+            text-align: center;
+
+            .eltdf-logo-wrapper img {
+                margin: 0 auto;
+            }
+        }
+    }
+	
+	.eltdf-logo-wrapper {
+		@include eltdfRelativeHolderLayout();
+		z-index: 100;
+		
+		a {
+			display: block;
+			position: relative;
+			height: 100%;
+		}
+		
+		img {
+			display: block;
+			height: auto;
+			max-height: 100%;
+			@include eltdfTransition(opacity 0.3s ease);
+		}
+	}
+
+    .eltdf-vertical-area-background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: $vertical-menu-width;
+        height: 100%;
+        background-color: #fff;
+        background-position: right top;
+        background-repeat: no-repeat;
+        background-size: cover;
+        z-index: 0;
+        opacity: 1;
+        @include eltdfTransition(opacity 0.5s ease, background-color 0.5s ease);
+    }
+    
+    &.eltdf-header-vertical-shadow-disable .eltdf-vertical-area-background {
+        box-shadow: none;
+    }
+    
+    &.eltdf-header-vertical-border-disable .eltdf-vertical-area-background {
+        border: none;
+    }
+}
+
+.eltdf-light-header {
+	
+	.eltdf-vertical-menu-area {
+		
+		.eltdf-logo-wrapper {
+			
+			.eltdf-light-logo {
+				opacity: 1;
+			}
+			
+			.eltdf-normal-logo,
+			.eltdf-dark-logo {
+				opacity: 0;
+			}
+		}
+	}
+}
+
+.eltdf-dark-header {
+	
+	.eltdf-vertical-menu-area {
+		
+		.eltdf-logo-wrapper {
+			
+			.eltdf-dark-logo {
+				opacity: 1;
+			}
+			
+			.eltdf-normal-logo,
+			.eltdf-light-logo {
+				opacity: 0;
+			}
+		}
+	}
+}
+/* ==========================================================================
+   Header Vertical style - end
+   ========================================================================== */

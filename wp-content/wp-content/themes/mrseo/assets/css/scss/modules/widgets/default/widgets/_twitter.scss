@@ -1,0 +1,113 @@
+/* ==========================================================================
+   Twitter widget style - begin
+   ========================================================================== */
+
+.widget.widget_eltdf_twitter_widget {
+
+    margin: 0 0 20px;
+
+    > h4 {
+        margin: 0 0 8px;
+    }
+
+    .eltdf-twitter-widget {
+        @include eltdfRelativeHolderLayout();
+        margin: 0;
+
+        li {
+            @include eltdfRelativeHolderLayout();
+            padding: 0;
+            border: none;
+
+            &:not(:last-child) {
+                margin: 0 0 24px;
+            }
+
+            .eltdf-tweet-text {
+                position: relative;
+                line-height: 27px;
+
+                a {
+                    position: relative;
+                    line-height: inherit;
+                    color: inherit;
+
+                    &:hover {
+                        color: $first-main-color;
+                    }
+
+                    &.eltdf-tweet-time {
+                        display: block;
+
+                        span {
+                            margin: 0 2px 0 0;
+                        }
+                    }
+                }
+            }
+        }
+
+        &.eltdf-twitter-standard {
+
+            li {
+
+                .eltdf-twitter-icon {
+                    position: absolute;
+                    top: 4px;
+                    left: 0;
+                    color: $first-main-color;
+
+                    i {
+                        font-size: 14px;
+                    }
+                }
+
+                .eltdf-tweet-text {
+                    padding: 0 0 0 28px;
+                }
+            }
+        }
+
+        &.eltdf-twitter-slider {
+            @include eltdfRelativeHolderLayout();
+            padding: 0 50px;
+            text-align: center;
+            box-sizing: border-box;
+
+            li {
+                overflow: hidden;
+
+                .eltdf-twitter-icon {
+
+                    i {
+                        font-size: 14px;
+                        color: $first-main-color;
+                    }
+                }
+
+                .eltdf-tweet-text {
+                    a {
+
+                        &.eltdf-tweet-time {
+                            margin: 21px 0 0;
+                        }
+                    }
+                }
+            }
+            
+            .owl-nav {
+
+                .owl-prev {
+                    left: 0;
+                }
+
+                .owl-next {
+                    right: 0;
+                }
+            }
+        }
+    }
+}
+/* ==========================================================================
+   Twitter widget style - end
+   ========================================================================== */

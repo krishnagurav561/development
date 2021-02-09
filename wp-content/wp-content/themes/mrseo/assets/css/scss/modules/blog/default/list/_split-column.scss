@@ -1,0 +1,253 @@
+/* ==========================================================================
+   Blog List - Split Columns style - begin
+   ========================================================================== */
+
+.eltdf-blog-holder {
+    
+    &.eltdf-blog-split-column {
+        
+        article {
+            margin: 0 0 50px;
+            padding: 0;
+
+            .eltdf-post-content {
+                @include eltdfTableLayout();
+            }
+
+            .eltdf-post-heading,
+            .eltdf-post-text {
+                display: table-cell;
+                position: relative;
+                width: 50%;
+                vertical-align: top;
+            }
+
+            &.eltdf-post-has-media {
+            	.eltdf-post-title{
+            		margin-bottom: 30px;
+            	}
+
+                .eltdf-post-heading {
+                    margin-bottom: 25px;
+                }
+            }
+
+            &.eltdf-post-no-media {
+                .eltdf-post-heading {
+                    display: none;
+                }
+                .eltdf-post-text {
+                    display: inline-block;
+                    width: 100%;
+                    .eltdf-post-text-inner {
+                        padding-left: 0;
+                    }
+                }
+            }
+
+            .eltdf-post-image{
+                line-height: 0;
+	            
+                > a {
+	                position: relative;
+	                display: inline-block;
+	                vertical-align: middle;
+
+                    &:after {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        height: 100%;
+                        width: 100%;
+                        background-color: rgba(255, 255, 255, .15);
+                        opacity: 0;
+                        @include eltdfTransition(opacity .4s);
+                    }
+
+                    &:hover {
+	                    
+                        &:after {
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+
+            .eltdf-post-text-inner {
+                padding-left: 20px;
+            }
+
+            .eltdf-post-info-top {
+            	font-size: 14px;
+            	font-weight: 600;
+                margin-bottom: 6px;
+	
+	            > div {
+		            position: relative;
+		            display: inline-block;
+		            margin-left: 2px;
+		
+		            &:first-child {
+			            margin-left: 0;
+		            }
+		
+		            span {
+			            color: $default-heading-color;
+		            }
+	            }
+            }
+
+            .eltdf-post-info-bottom {
+            	font-size: 14px;
+            	font-weight: 600;
+	            padding-top: 20px;
+
+	            span {
+		            color: $default-heading-color;
+	            }
+
+                .eltdf-post-info-bottom-holder{
+	                position: relative;
+	                display: inline-block;
+                    line-height: 27px;
+
+                    > div{
+                    	display: inline-block;
+                    	vertical-align: middle;
+                    }
+                }
+            }
+            
+
+			&.format-quote.has-post-thumbnail,
+			&.format-link.has-post-thumbnail{
+				.eltdf-post-text{
+					position: relative;
+					background-position: center;
+					background-size: cover;
+
+					.eltdf-post-text-inner{
+						position: relative;
+						z-index: 5;
+					}
+
+					&:after{
+						content: '';
+						@include eltdfAbsoluteHolderLayout();
+						background-color: transparentize($first-main-color, 0.2);
+					}
+				}
+			}
+
+            &.format-audio {
+                .eltdf-blog-audio-holder {
+                    width: 100%;
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                }
+                &.eltdf-post-no-media.has-post-thumbnail {
+                    .eltdf-post-heading {
+                        display: table-cell;
+                    }
+                    .eltdf-post-text {
+                        display: table-cell;
+                        width: 50%;
+                        .eltdf-post-text-inner {
+                            padding-left: 20px;
+                        }
+                    }
+                }
+            }
+
+            &.format-quote {
+	            
+                .eltdf-post-text {
+	                display: inline-block;
+	                width: 100%;
+	                padding: 50px 70px 50px 55px;
+	                background-color: #333;
+                }
+
+                .eltdf-post-mark{
+                	position: relative;
+                	width: 30px;
+                	height: 30px;
+                }
+
+                .eltdf-quote-mark {
+                	position: absolute;
+                	top: 50%;
+                    font-size: 70px;
+                    color: #fff;
+                    font-family: $second-font;
+                }
+
+                .eltdf-post-title {
+                	color: #fff;
+                    margin-bottom: 0;
+
+                    a:hover{
+                    	color: #333;
+                    }
+                }
+	            
+                .eltdf-quote-author {
+	                display: inline-block;
+	                margin: 19px 0 0;
+	                color: #fff;
+                }
+
+ 	           	.eltdf-post-info-bottom {
+ 	           		color: #fff;
+ 	           		padding-top: 58px;
+
+ 	           		a,
+ 	           		span{
+ 	           			color: #fff;
+ 	           		}
+ 	           	}
+            }
+
+            &.format-link {
+	            
+                .eltdf-post-text {
+	                display: inline-block;
+	                width: 100%;
+	                padding: 50px 90px 50px 55px;
+	                background-color: #333;
+                }
+
+                .eltdf-post-mark{
+                	position: relative;
+                	color: #fff;
+                    font-size: 24px;
+                    margin-bottom: 10px;
+                }
+	            
+                .eltdf-post-title {
+                	color: #fff;
+                    margin-bottom: 0;
+
+                    a:hover{
+                    	color: #333;
+                    }
+                }
+
+ 	           	.eltdf-post-info-bottom {
+ 	           		color: #fff;
+ 	           		padding-top: 77px;
+
+ 	           		a,
+ 	           		span{
+ 	           			color: #fff;
+ 	           		}
+ 	           	}
+            }
+        }
+    }
+}
+/* ==========================================================================
+   Blog List - Split Columns style - end
+   ========================================================================== */

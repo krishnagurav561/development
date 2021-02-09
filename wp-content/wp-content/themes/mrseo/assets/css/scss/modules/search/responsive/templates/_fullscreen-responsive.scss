@@ -1,0 +1,34 @@
+/* ==========================================================================
+# Fullscreen search responsive - start
+========================================================================== */
+
+.eltdf-fullscreen-search-holder {
+    @include ipad-portrait {
+        .eltdf-form-holder-inner {
+            width: 75%;
+        }
+        .eltdf-search-field {
+            font-size: 25px;
+        }
+        .eltdf-search-submit {
+            font-size: 25px;
+            line-height: 71px;
+        }
+    }
+    @include phone-portrait {
+        .eltdf-form-holder-inner {
+            width: 80%;
+        }
+        .eltdf-search-field {
+            font-size: 15px;
+        }
+        .eltdf-search-submit {
+            font-size: 15px;
+            line-height: 55px;
+        }
+    }
+}
+
+/* ==========================================================================
+# Fullscreen search responsive - end
+========================================================================== */

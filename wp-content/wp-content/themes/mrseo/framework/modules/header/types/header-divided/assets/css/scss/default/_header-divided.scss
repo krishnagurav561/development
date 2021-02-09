@@ -1,0 +1,72 @@
+/* ==========================================================================
+   Header Divided style - begin
+   ========================================================================== */
+
+.eltdf-header-divided {
+	
+	.eltdf-page-header {
+		
+		.eltdf-logo-wrapper {
+			
+			a {
+				
+				img {
+					margin: 0 auto;
+				}
+			}
+		}
+		
+		.eltdf-menu-area {
+			opacity: 0;
+			box-sizing: border-box;
+			
+			.eltdf-grid {
+				height: 100%;
+			}
+		}
+		
+		.eltdf-main-menu {
+			width: auto;
+			margin: 0;
+			
+			& > ul > li > a span.item_inner {
+				padding: 0 28px;
+			}
+		}
+		
+		.eltdf-vertical-align-containers {
+			padding: 0;
+			
+			.eltdf-position-left {
+				text-align: right;
+				
+				.eltdf-position-left-inner {
+					height: 100%;
+					text-align: left;
+					padding-right: 50px;
+				}
+			}
+			
+			.eltdf-position-right {
+				text-align: left;
+				
+				.eltdf-position-right-inner {
+					height: 100%;
+					padding-left: 50px;
+				}
+			}
+			
+			.eltdf-position-center {
+				position: absolute;
+				width: 100%;
+			}
+		}
+		
+		.eltdf-sticky-header .eltdf-position-center-inner {
+			height: auto;
+		}
+	}
+}
+/* ==========================================================================
+   Header Divided style - end
+   ========================================================================== */

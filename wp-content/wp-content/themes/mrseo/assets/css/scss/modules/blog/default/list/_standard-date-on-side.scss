@@ -1,0 +1,181 @@
+/* ==========================================================================
+   Blog List - Standard Date on Side style - begin
+   ========================================================================== */
+
+.eltdf-blog-holder {
+	
+    &.eltdf-blog-standard-date-on-side {
+	    
+        article {
+            padding-bottom: 20px;
+            margin-bottom: 32px;
+
+            &.eltdf-post-has-media {
+                .eltdf-post-heading {
+                    margin-bottom: 30px;
+                }
+            }
+
+            .eltdf-post-text {
+                display: table;
+                table-layout: fixed;
+            }
+
+            .eltdf-post-date-inner {
+                display: table-cell;
+                width: 75px;
+                height: 100%;
+                vertical-align: top;
+                line-height: 0;
+
+                .eltdf-post-date-day {
+	                display: inline-block;
+	                width: 100%;
+	                height: 40px;
+	                font-size: 24px;
+	                line-height: 40px;
+	                color: $first-main-color;
+	                background-color: #f9f9f9;
+	                border-radius: 3px 3px 0 0;
+	                text-align: center;
+                }
+
+                .eltdf-post-date-month {
+	                display: inline-block;
+	                width: 100%;
+	                height: 26px;
+	                font-size: 12px;
+	                line-height: 26px;
+	                color: $first-main-color;
+	                background-color: #e9e9e9;
+	                border-radius: 3px 3px 0 0;
+	                text-align: center;
+                }
+            }
+
+            .eltdf-post-text-inner {
+                display: table-cell;
+                width: 100%;
+                height: 100%;
+                padding-left: 20px;
+            }
+
+            .eltdf-post-title {
+                margin: 0 0 15px;
+	            
+                a {
+	                
+                    &:hover {
+                        color: $first-main-color;
+                    }
+                }
+            }
+
+            .eltdf-post-excerpt {
+                margin: 0 0 20px;
+            }
+
+            .eltdf-post-info {
+                margin-bottom: 12px;
+
+                > div {
+                    display: inline-block;
+                    position: relative;
+                    padding-right: 15px;
+                    color: $default-heading-color;
+                    font-size: 14px;
+                    font-weight: 600;
+	                
+	                &:after {
+		                content: "/";
+		                position: absolute;
+		                right: 5px;
+		                top: 0;
+	                }
+	                
+	                &:last-child {
+		                
+		                &:after {
+			                content: '';
+		                }
+	                }
+
+                    a {
+                        color: $default-heading-color;
+	                    
+                        &:hover {
+                            color: $first-main-color;
+                        }
+                    }
+                }
+            }
+
+            &.format-audio {
+                &.eltdf-post-no-media.has-post-thumbnail {
+                    .eltdf-post-heading {
+                        margin-bottom: 30px;
+                    }
+                }
+            }
+
+            &.format-quote,
+            &.format-link {
+
+            	.eltdf-post-mark{
+            		margin-bottom: 10px;
+            	}
+                
+                .eltdf-post-text{
+                    padding: 34px 31px 38px;
+                    background-color: #f9f9f9;
+                    box-sizing: border-box;
+                }
+                
+                .eltdf-post-info {
+                    margin-bottom: 19px;
+                }
+                
+                .eltdf-post-title {
+                    font-size: 22px;
+                    margin: 0 0 20px;
+                }
+
+                .eltdf-post-date-inner .eltdf-post-date-day {
+                    background-color: #fff;
+                }
+            }
+
+            &.format-quote {
+                
+                .eltdf-post-mark{
+                	position: relative;
+                	width: 30px;
+                	height: 30px;
+                }
+
+                .eltdf-quote-mark {
+                	position: absolute;
+                	top: 50%;
+                    font-size: 70px;
+                    color: $default-text-color;
+                    font-family: $second-font;
+                }
+
+                .eltdf-quote-author {
+                    font-size: 16px;
+                    color: $first-main-color;
+                }
+            }
+
+            &.format-link {
+
+                .eltdf-post-mark{
+                    font-size: 24px;
+                }
+            }
+        }
+    }
+}
+/* ==========================================================================
+   Blog List - Standard Date on Side style - end
+   ========================================================================== */

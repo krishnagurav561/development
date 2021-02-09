@@ -1,0 +1,36 @@
+/* ==========================================================================
+   Default WordPress widgets styles - begin
+   ========================================================================== */
+
+.widget {
+    background-color: $widget-background-color;
+    margin: 0 0 $widget-bottom-margin;
+    padding: 0;
+
+    .eltdf-widget-title-holder {
+        margin-bottom: $widget-title-margin-bottom;
+        background-color: $light-skin-color;
+        padding: 20px 22px;
+
+        .eltdf-widget-title {
+            color: $widget-heading-color;
+            margin:0;
+        }
+
+        .eltdf-separator {
+            border-color: $widget-text-color;
+            border-bottom-width: 3px;
+            width: 30px;
+        }
+    }
+
+    &.widget_text{
+        a {
+            color: $widget-link-color;
+
+            &:hover {
+                color: $widget-link-hover-color;
+            }
+        }
+    }
+}

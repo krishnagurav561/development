@@ -1,0 +1,42 @@
+/* ==========================================================================
+   WooCommerce Star Rating styles - begin
+   ========================================================================== */
+
+.woocommerce {
+    
+    .star-rating {
+        position: relative;
+        display: inline-block;
+        vertical-align: middle;
+        font-family: "FontAwesome";
+        font-size: 12px;
+        line-height: 1;
+        letter-spacing: 2px;
+        color: #d1d1d1;
+        overflow: hidden;
+        -webkit-font-smoothing: antialiased;
+        
+        &:before {
+            content: "\f005\f005\f005\f005\f005";
+        }
+        
+        span {
+            position: absolute;
+            top: 0;
+            left: 0;
+            overflow: hidden;
+            
+            &:before {
+                content: "\f005\f005\f005\f005\f005";
+                color: $first-main-color;
+            }
+        }
+    }
+
+    .woocommerce-review-link{
+    	color: $default-text-color;
+    }
+}
+/* ==========================================================================
+   WooCommerce Star Rating styles - end
+   ========================================================================== */

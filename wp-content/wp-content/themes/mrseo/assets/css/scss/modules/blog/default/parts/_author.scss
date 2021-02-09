@@ -1,0 +1,131 @@
+/* Single author box styles - begin
+	====================================================================== */
+
+.eltdf-author-description {
+    @include eltdfRelativeHolderLayout();
+    padding: 0;
+    background-color: $shortcode-background-color;
+    text-align: left;
+    box-sizing: border-box;
+
+    .eltdf-author-description-inner {
+        min-height: 100px;
+        clear: both;
+    }
+
+    .eltdf-author-description-content {
+        position: relative;
+        display: table;
+        table-layout: fixed;
+        width: 100%;
+    }
+
+    .eltdf-author-description-image {
+    	display: table-cell;
+        width: 227px;
+        vertical-align: middle;
+
+        .eltdf-author-image-url{
+        	position: relative;
+        	padding-top: 100%;
+        	width: 100%;
+        	display: inline-block;
+        	vertical-align: middle;
+        }
+
+        .eltdf-author-image-bckg{
+        	@include eltdfAbsoluteHolderLayout();
+	        background-size: cover;
+	        background-position: center;
+        }
+
+        img{
+        	display: none;
+        	vertical-align: middle;
+        }
+    }
+
+    .eltdf-author-description-text-holder {
+        position: relative;
+        display: table-cell;
+    	vertical-align: middle;
+        padding: 20px 65px;
+
+        .eltdf-author-name {
+            margin: 0;
+
+            a {
+                color: $default-heading-color;
+
+                &:hover {
+                    color: $first-main-color;
+                }
+            }
+        }
+
+        .eltdf-author-email {
+            margin: 0;
+        }
+
+        .eltdf-author-text {
+            @include eltdfRelativeHolderLayout();
+
+            > p {
+                margin: 6px 0 12px;
+            }
+        }
+
+        .eltdf-author-social-icons {
+            @include eltdfRelativeHolderLayout();
+
+            a {
+                position: relative;
+                display: inline-block;
+                vertical-align: middle;
+                padding: 0;
+                margin: 0 15px 0 0;
+                font-size: 18px;
+                color: $default-heading-color;
+
+                &:last-child {
+                    margin: 0;
+                }
+
+                &:hover {
+                    color: $first-main-color;
+                }
+            }
+        }
+    }
+    
+    @include ipad-portrait {
+        .eltdf-author-description-content {
+            padding: 0;
+        }
+        .eltdf-author-description-image {
+            display: block;
+            width: 100%;
+
+            .eltdf-author-image-url{
+            	padding: 15px 15px 0;
+            	box-sizing: border-box;
+            }
+
+            .eltdf-author-image-bckg{
+            	display: none;
+            }
+
+            img{
+            	display: inline-block;
+            }
+        }
+        .eltdf-author-description-text-holder {
+            display: block;
+            padding: 0 15px 15px;
+            margin-top: 30px;
+        }
+    }
+}
+
+/* Single author box styles - end
+	====================================================================== */

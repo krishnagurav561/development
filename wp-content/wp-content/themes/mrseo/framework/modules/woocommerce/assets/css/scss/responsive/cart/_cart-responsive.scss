@@ -1,0 +1,128 @@
+/* ==========================================================================
+   WooCommerce Cart page responsive styles - begin
+   ========================================================================== */
+
+@include ipad-portrait {
+	
+	.eltdf-woocommerce-page {
+		
+		table.cart {
+			
+			td.actions {
+				
+				.coupon {
+					
+					input[type="text"] {
+						width: 180px;
+						margin: 0 17px 0 0;
+						padding: 9px 20px;
+					}
+				}
+				
+				.button {
+					height: 38px;
+					line-height: 38px;
+					padding: 0 28px;
+				}
+			}
+
+			tr.cart_item {
+				td.product-thumbnail{
+					width: 70px;
+					padding-left: 5px;
+					padding-right: 5px;
+				}
+			}
+
+			.eltdf-quantity-buttons .eltdf-quantity-input{
+				width: 56px;
+			}
+		}
+	}
+}
+
+@include phone-landscape {
+	
+	.eltdf-woocommerce-page {
+		
+		table.cart {
+			
+			td.actions {
+				
+				.coupon {
+					
+					input[type="text"] {
+						width: 160px;
+						padding: 9px 15px;
+						margin: 0 10px 0 0;
+					}
+				}
+				
+				.coupon,
+				> input {
+					float: none;
+					display: block;
+				}
+				
+				> input {
+					margin: 14px 0 0;
+				}
+
+			}
+
+			tr.cart_item {
+
+				td{
+					padding: 15px 2px;
+				}
+
+				td.product-thumbnail{
+					display: none;
+				}
+			}
+
+			thead tr{
+				th.product-thumbnail{
+					display: none;
+				}
+			}
+
+			.eltdf-quantity-buttons .eltdf-quantity-minus,
+			.eltdf-quantity-buttons .eltdf-quantity-plus,
+			.eltdf-quantity-buttons .eltdf-quantity-input{
+				width: 32px;
+			}
+		}
+	}
+}
+
+@include phone-portrait{
+	.eltdf-woocommerce-page {
+		
+		table.cart {
+			tr.cart_item {
+
+				td{
+					padding: 12px 2px;
+				}
+
+				td.product-quantity{
+					width: 100px;
+				}
+
+				td.product-name a{
+					font-size: 13px;
+				}
+
+				td.product-price .amount,
+				td.product-subtotal .amount{
+					font-size: 13px;
+				}
+
+			}
+		}
+	}
+}
+/* ==========================================================================
+   WooCommerce Cart page responsive styles - end
+   ========================================================================== */

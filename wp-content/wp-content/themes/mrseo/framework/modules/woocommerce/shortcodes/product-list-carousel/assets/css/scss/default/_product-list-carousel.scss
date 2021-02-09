@@ -1,0 +1,381 @@
+/* ==========================================================================
+   Product List - Carousel shortcode styles - begin
+   ========================================================================== */
+
+.eltdf-plc-holder {
+    @include eltdfRelativeHolderLayout();
+
+    .eltdf-plc-outer {
+        @include eltdfRelativeHolderLayout();
+    }
+
+    .eltdf-plc-item {
+        position: relative;
+        display: inline-block;
+        vertical-align: top;
+        width: 100%;
+        padding: 0;
+        z-index: 100;
+        overflow: hidden;
+        box-sizing: border-box;
+
+        &:hover {
+
+            .eltdf-plc-image-outer {
+
+                .eltdf-plc-text {
+                    opacity: 1;
+                }
+            }
+        }
+
+        .touch & {
+            cursor: pointer;
+        }
+
+        .eltdf-plc-image-outer {
+            @include eltdfRelativeHolderLayout();
+
+            .eltdf-plc-image {
+                @include eltdfRelativeHolderLayout();
+
+                img {
+                    display: block;
+                    width: 100%;
+                }
+
+                .eltdf-plc-onsale,
+                .eltdf-plc-out-of-stock {
+			        position: absolute;
+			        display: block;
+			        top: 0;
+			        right: 0;
+			        width: 77px;
+			        height: 67px;
+			        color: #fff;
+			        font-size: 17px;
+			        line-height: 67px;
+			        font-weight: 800;
+			        font-family: $second-font;
+			        padding: 0 16px;
+			        margin: 0;
+			        text-align: center;
+			        z-index: 100;
+			        @include eltdfTransform(translateZ(0));
+			        box-sizing: border-box;
+
+
+			        &:before{
+			        	content: '';
+						position: absolute;
+						right: 0;
+						top: 0;
+						border-bottom: 127px solid transparent;
+						border-right: 127px solid $first-main-color;
+						z-index: -1;
+			        }
+                }
+            }
+
+            .eltdf-plc-text {
+                position: absolute;
+                top: 0;
+                left: 0;
+                display: inline-block;
+                width: 100%;
+                height: 100%;
+                padding: 10px;
+                opacity: 0;
+                background-color: rgba($default-heading-color, 0.6);
+                box-sizing: border-box;
+                @include eltdfTransition(opacity .2s ease-out, background-color .2s ease-out);
+            }
+
+            .eltdf-plc-text-outer {
+                position: relative;
+                display: table;
+                width: 100%;
+                height: 100%;
+                text-align: center;
+            }
+
+            .eltdf-plc-text-inner {
+                position: relative;
+                display: table-cell;
+                width: 100%;
+                height: 100%;
+                vertical-align: middle;
+            }
+        }
+
+        .eltdf-plc-title {
+            margin: 0 0 4px;
+        }
+	
+	    .eltdf-plc-category {
+		    margin: 11px 0 3px;
+	    }
+
+        .eltdf-plc-excerpt {
+            color: $default-heading-color;
+            line-height: 1.3em;
+            margin: 11px 0 3px;
+        }
+
+        .eltdf-plc-rating-holder {
+            @include eltdfRelativeHolderLayout();
+            line-height: 1;
+            margin: 10px 0 3px;
+        }
+
+        .eltdf-plc-rating {
+            position: relative;
+            display: inline-block;
+            vertical-align: middle;
+            font-family: "ElegantIcons";
+            font-size: 12px;
+            line-height: 1;
+            letter-spacing: 2px;
+            color: $default-text-color;
+            overflow: hidden;
+            -webkit-font-smoothing: antialiased;
+
+            &:before {
+                content: "\e031\e031\e031\e031\e031";
+            }
+
+            span {
+                position: absolute;
+                top: 0;
+                left: 0;
+                overflow: hidden;
+
+                &:before {
+                    content: "\e033\e033\e033\e033\e033";
+                }
+            }
+        }
+
+        .eltdf-plc-price {
+            display: block;
+            color: $default-heading-color;
+    		font-weight: 800;
+    		font-family: $second-font;
+            line-height: 1;
+            margin: 14px 0 0;
+            
+            * {
+                font-size: inherit;
+                line-height: inherit;
+            }
+            
+            del {
+				position: relative;
+				display: inline-block;
+				vertical-align: top;
+				color: #d1d1d1;
+				text-decoration: none;
+				overflow: hidden;
+				margin: 0 6px 0 0;
+
+    			&:after{
+    				content: '';
+    				position: absolute;
+					left: 0;
+					top: 50%;
+					right: 0;
+    				border-bottom: 1px solid #333;
+    				@include eltdfTransform(rotate(-16deg));
+    			}
+            }
+            
+            ins {
+                text-decoration: none;
+            }
+        }
+	
+	    .button,
+	    .added_to_cart {
+		    @include eltdfButtonDefaultStyle();
+		    @include eltdfButtonMediumParams();
+		    white-space: nowrap;
+		    z-index: 3;
+	    }
+	
+	    .button.added {
+		    display: none;
+	    }
+	
+	    .eltdf-plc-add-to-cart {
+		    margin: 20px 0 0;
+		
+		    &.eltdf-default-skin {
+			
+			    .button,
+			    .added_to_cart {
+				    @include eltdfButtonSolidColor();
+				
+				    &:hover {
+					    @include eltdfButtonSolidHoverColor();
+				    }
+			    }
+		    }
+		
+		    &.eltdf-light-skin {
+			
+			    .button,
+			    .added_to_cart {
+				    color: $default-heading-color;
+				    background-color: #fff;
+				
+				    &:hover {
+					    color: #fff;
+					    background-color: $first-main-color;
+				    }
+			    }
+		    }
+		
+		    &.eltdf-dark-skin {
+			
+			    .button,
+			    .added_to_cart {
+				    color: #fff;
+				    background-color: $default-heading-color;
+				
+				    &:hover {
+					    color: #fff;
+					    background-color: $first-main-color;
+				    }
+			    }
+		    }
+	    }
+
+        .eltdf-plc-link {
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &.eltdf-standard-layout {
+
+        .eltdf-plc-item {
+    
+            .eltdf-plc-title,
+            .eltdf-plc-category a,
+            .eltdf-plc-excerpt,
+            .eltdf-plc-rating {
+                color: #fff;
+            }
+
+            .eltdf-plc-category a{
+            	position: relative;
+            	z-index: 15;
+            }
+    
+            .eltdf-plc-price {
+                color: #fff;
+        
+                del {
+                    color: #ccc;
+                }
+            }
+        }
+    }
+
+    &.eltdf-simple-layout {
+        
+        .eltdf-plc-image-outer {
+            display: table-cell;
+            vertical-align: middle;
+            width: 50%;
+            padding: 0 15px 0 0;
+        }
+
+        .eltdf-plc-text-wrapper {
+            position: relative;
+            display: table-cell;
+            vertical-align: middle;
+            width: 50%;
+            padding: 0 0 0 15px;
+        }
+
+        .eltdf-plc-text,
+        .eltdf-plc-text-outer,
+        .eltdf-plc-text-inner {
+            @include eltdfRelativeHolderLayout();
+            -webkit-transform: translateZ(0);
+        }
+    }
+	
+	&.eltdf-plc-nav-light-skin {
+		
+		.owl-nav {
+			
+			.owl-prev,
+			.owl-next {
+				
+				&:hover {
+					
+					.eltdf-prev-icon,
+					.eltdf-next-icon {
+						color: $header-light-hover-color;
+					}
+				}
+			}
+			
+			.eltdf-prev-icon,
+			.eltdf-next-icon {
+				color: $header-light-color;
+			}
+		}
+	}
+	
+	&.eltdf-plc-pag-inside-slider {
+		
+		.owl-prev,
+		.owl-next {
+			@include eltdfTransform(translateY(-50%));
+		}
+		
+		.owl-dots {
+			position: absolute;
+			left: 0;
+			bottom: 10px;
+			margin: 0;
+		}
+	}
+	
+	&.eltdf-plc-pag-light-skin {
+		
+		.owl-dots {
+			
+			.owl-dot {
+
+				span {
+
+					&:after {
+						background-color: $header-light-hover-color;
+					}
+				}
+
+				&:hover,
+				&.active {
+
+					span {
+
+						&:after {
+							background-color: $header-light-color;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+/* ==========================================================================
+   Product List - Carousel shortcode styles - end
+   ========================================================================== */

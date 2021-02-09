@@ -1,0 +1,67 @@
+/* ==========================================================================
+   Default WordPress widgets styles - begin
+   ========================================================================== */
+
+.widget {
+    border-color: $widget-border-color;
+    border-style: solid;
+    border-width: $widget-border-width;
+    margin: 0 0 $widget-bottom-margin;
+    padding: $widget-inner-padding $widget-inner-padding $widget-bottom-padding $widget-inner-padding;
+
+    .eltdf-widget-title-holder {
+        margin-bottom: $widget-title-margin-bottom;
+
+        .eltdf-widget-title {
+            color: $widget-heading-color;
+            margin-bottom: 3px;
+        }
+
+        .eltdf-separator {
+            border-color: $widget-text-color;
+            border-bottom-width: 3px;
+            width: 30px;
+        }
+    }
+
+    ul {
+
+        li {
+            border-bottom-color: $widget-list-item-border-color;
+            border-bottom-style: $widget-list-item-border-style;
+            border-bottom-width: $widget-list-item-border-width;
+        }
+
+        .children,
+        .sub-menu{        	
+            border-top-color: $widget-list-item-border-color;
+            border-top-style: $widget-list-item-border-style;
+            border-top-width: $widget-list-item-border-width;
+        }
+    }
+
+    // search
+    &.widget_search {
+
+        .input-holder {
+            border-color: $widget-list-item-border-color;
+            border-style: $widget-list-item-border-style;
+            border-width: $widget-list-item-border-width;
+        }
+    }
+
+    // combobox
+    &.widget_archive,
+    &.widget_categories,
+    &.widget_text {
+
+    	select{
+
+            option {
+                border-color: $widget-border-color;
+                border-style: $widget-border-style;
+                border-width: $widget-border-width;
+            }
+        }
+    }
+}

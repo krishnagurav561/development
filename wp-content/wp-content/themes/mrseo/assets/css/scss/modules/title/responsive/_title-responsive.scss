@@ -1,0 +1,68 @@
+/* ==========================================================================
+   Title responsive style - begin
+   ========================================================================== */
+
+@include ipad-landscape {
+    
+    .eltdf-title {
+        
+        &.eltdf-has-background {
+            background: rgba(0, 0, 0, 0) none repeat scroll 0 0 !important;
+            height: auto !important;
+            padding: 0 !important;
+        }
+        
+        &.eltdf-title-image-not-responsive {
+            
+            .eltdf-title-image {
+                display: block;
+            }
+        }
+        
+        .eltdf-title-holder {
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: block;
+            height: 100% !important;
+            padding: 0 !important;
+            
+            .eltdf-container {
+                display: block;
+                height: 100%;
+            }
+            
+            .eltdf-container-inner {
+                display: table;
+                height: 100%;
+            }
+            
+            .eltdf-title-subtitle-holder {
+                display: table-cell;
+                vertical-align: middle;
+                width: 100%;
+                padding: 0px !important;
+            }
+        }
+    }
+}
+
+@include ipad-portrait {
+    
+    .eltdf-title {
+        
+        &.eltdf-standard-type {
+            
+            .eltdf-title-like-share-holder {
+                position: relative;
+                left: auto;
+                right: auto;
+                width: 100%;
+                margin-top: 4px;
+            }
+        }
+    }
+}
+/* ==========================================================================
+   Title responsive style - end
+   ========================================================================== */

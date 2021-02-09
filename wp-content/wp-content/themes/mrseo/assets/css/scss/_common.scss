@@ -1,0 +1,651 @@
+@import 'variables';
+@import 'mixins';
+
+/* ==========================================================================
+   #Comments styles - start
+   ========================================================================== */
+
+.eltdf-comment-holder {
+    @include eltdfRelativeHolderLayout();
+    padding: 0;
+    box-sizing: border-box;
+
+    .eltdf-comment-holder-inner {
+        padding: 41px 0 20px;
+    }
+	
+	.eltdf-comment {
+		
+		&.eltdf-pingback-comment {
+			
+			.eltdf-comment-text {
+				padding: 0;
+			}
+		}
+	}
+
+    .eltdf-comment-list {
+        list-style: none;
+        position: relative;
+        z-index: 150;
+        padding: 0;
+        margin: 0;
+
+        li.eltdf-comment-li {
+            @include eltdfRelativeHolderLayout();
+            margin: 25px 0 0;
+            padding: 25px 0 0;
+        }
+
+        > li:first-child {
+            margin: 0;
+            padding: 0;
+            border: 0;
+        }
+
+        .children {
+            padding: 0 0 0 90px;
+        }
+    }
+
+    .eltdf-comments-title {
+        margin-bottom: 44px;
+
+        > * {
+            margin: 0;
+        }
+    }
+
+    .eltdf-comment-image {
+        position: relative;
+        display: block;
+        top: 0;
+        left: 0;
+        width: 112px;
+        height: 112px;
+        float: left;
+
+        img {
+            display: block;
+        }
+    }
+
+    .eltdf-comment-text {
+        padding: 0 0 0 160px;
+        min-height: 112px;
+
+        .eltdf-comment-info {
+            @include eltdfRelativeHolderLayout();
+            margin: 0;
+        }
+
+        .replay,
+        .comment-reply-link,
+        .comment-edit-link {
+            margin-right: 10px;
+            color: $default-heading-color;
+            font-weight: 600;
+
+            &:hover {
+                color: $first-main-color;
+            }
+        }
+
+        .eltdf-comment-name {
+        	display: inline-block;
+            margin: 0;
+        }
+
+        .eltdf-comment-date {
+        	display: inline-block;
+            font-weight: 600;
+            margin: 0 0 0 17px;
+        }
+
+        .eltdf-text-holder p {
+            margin: 3px 0 9px;
+        }
+
+        .comment-respond {
+            margin: 20px 0;
+
+            .comment-reply-title {
+                margin: 0 0 10px;
+                font-size: 14px;
+            }
+
+            .logged-in-as {
+                margin: 0 0 8px;
+            }
+        }
+
+        #cancel-comment-reply-link {
+            margin-left: 10px;
+            font-size: 12px;
+            color: $first-main-color;
+
+            &:hover {
+                color: $default-heading-color;
+            }
+        }
+
+        li {
+            margin: 0 !important;
+            padding: 0 !important;
+            border: 0 !important;
+        }
+    }
+
+    .eltdf-comment-form-closed{
+    	margin-top: 30px;
+    }
+}
+
+.eltdf-comment-form {
+    padding: 0;
+    clear: both;
+    box-sizing: border-box;
+    
+    .eltdf-comment-form-inner {
+        padding: 45px 0 78px;
+    }
+    
+    .comment-reply-title {
+        margin: 0 0 43px;
+    }
+    
+    .logged-in-as {
+        margin: 0 0 8px;
+    }
+
+    .form-submit{
+    	margin-top: 24px;
+    }
+}
+
+.eltdf-title-italic{
+    font-weight: 400;
+    font-style: italic;
+}
+
+@include ipad-portrait {
+
+    .eltdf-comment-holder {
+	    
+        .eltdf-comment-list {
+	        
+            .children {
+                padding: 0 0 0 45px;
+            }
+        }
+
+        .eltdf-comment-text{
+        	padding-left: 140px;
+        }
+    }
+}
+
+@include phone-landscape {
+	
+    .eltdf-comment-holder {
+	    
+        .eltdf-comment-list {
+	        
+            .children {
+                padding: 0 0 0 20px;
+            }
+        }
+
+        .eltdf-comment-text {
+	        
+            .eltdf-comment-date,
+            .eltdf-comment-name {
+                float: none;
+            }
+        }
+    }
+}
+
+@include phone-portrait {
+	
+    .eltdf-comment-holder {
+	    
+        .eltdf-comment-list {
+	        
+            .children {
+                padding: 0;
+            }
+        }
+
+        .eltdf-comment-image {
+            float: none;
+        }
+
+        .eltdf-comment-text {
+            padding: 20px 0 0;
+            min-height: inherit;
+        }
+    }
+}
+
+/* ==========================================================================
+   #Comments styles - end
+   ========================================================================== */
+
+%input-style {
+    width: 100%;
+    margin: 0 0 2px;
+    padding: 26px 28px;
+    font-family: inherit;
+    font-size: 16px;
+    line-height: 28px;
+    font-weight: inherit;
+    color: $default-text-color;
+    background-color: $shortcode-background-color;
+    border: 0;
+    border-radius: 0;
+    outline: 0;
+    -webkit-appearance: none;
+    box-sizing: border-box;
+    @include eltdfTransition(background-color 0.2s ease-in-out);
+
+    &:focus {
+        color: $default-text-color;
+        background-color: #f3f3f3;
+    }
+    
+    @include eltdfPlaceholder {
+        color: $default-text-color;
+    }
+}
+
+#respond textarea,
+#respond input[type='text'],
+.post-password-form input[type='password'] {
+    @extend %input-style;
+}
+
+#respond textarea {
+    display: block;
+}
+
+p.form-submit {
+    margin: 0;
+}
+
+#submit_comment,
+.post-password-form input[type='submit'] {
+    @include eltdfButtonDefaultStyle();
+    @include eltdfButtonMediumParams();
+    @include eltdfButtonSolidColor();
+    
+    cursor: pointer;
+
+    &:hover {
+        @include eltdfButtonSolidHoverColor();
+    }
+}
+
+%cf7-input-style {
+    width: 100%;
+    margin: 0 0 2px;
+    padding: 26px 28px;
+    font-family: inherit;
+    font-size: 16px;
+    line-height: 28px;
+    font-weight: inherit;
+    color: $default-text-color;
+    background-color: #f6f6f6;
+    border: 0;
+    border-radius: 0;
+    outline: 0;
+    -webkit-appearance: none;
+    box-sizing: border-box;
+
+    &:focus {
+        color: $default-text-color;
+        background-color: #f3f3f3;
+    }
+	
+	@include eltdfPlaceholder {
+		color: $default-text-color;
+	}
+}
+
+.wpcf7-form-control {
+    &.wpcf7-text,
+    &.wpcf7-number,
+    &.wpcf7-date,
+    &.wpcf7-textarea,
+    &.wpcf7-select,
+    &.wpcf7-quiz {
+        @extend %cf7-input-style;
+
+        footer & {
+            margin: 0;
+        }
+    }
+}
+
+input.wpcf7-form-control.wpcf7-submit {
+    @include eltdfButtonDefaultStyle();
+    @include eltdfButtonMediumParams();
+    @include eltdfButtonSolidColor();
+    display: inline-block;
+    vertical-align: middle;
+    cursor: pointer;
+    margin-top: 25px;
+
+    &:hover {
+        @include eltdfButtonSolidHoverColor();
+    }
+
+    &.eltdf-cf7-icon{
+    	font-size: 18px;
+    	font-family: FontAwesome;
+    	margin: 0;
+    	padding: 23px 24px;
+    }
+}
+
+.eltdf-cf7-btn-centered{
+	text-align: center;
+
+	input.wpcf7-form-control.wpcf7-submit{
+		left: 10px; //half the ajax loader
+	}
+}
+
+.wpcf7-form p {
+    margin: 0;
+}
+
+.wpcf7-form textarea {
+    vertical-align: middle;
+}
+
+.eltdf-two-columns-form-newsletter{
+	position: relative;
+
+    .ajax-loader {
+        position: absolute;
+        right: -20px;
+		top: 50%;
+		@include eltdfTransform(translateY(-8px));
+    }
+}
+/* ==========================================================================
+   #Comments styles - end
+   ========================================================================== */
+
+/* ==========================================================================
+   #Global Owl Slider - begin
+   ========================================================================== */
+.eltdf-owl-slider {
+	visibility: hidden;
+	
+    .owl-stage-outer {
+        z-index: 1;
+    }
+    
+    &.eltdf-slider-has-both-nav {
+        
+        .owl-nav {
+            
+            .owl-prev,
+            .owl-next {
+                $pos: calc(-50% - 19px); // 19 is is half height of pagination control
+                @include eltdfTransform(translateY($pos));
+            }
+        }
+    }
+	
+	.owl-nav {
+		
+		.owl-prev,
+		.owl-next {
+			position: absolute;
+			top: 50%;
+			z-index: 3;
+			@include eltdfTransform(translateY(-50%));
+			
+			&:hover {
+				
+				.eltdf-prev-icon,
+				.eltdf-next-icon {
+					color: $first-main-color;
+				}
+			}
+		}
+		
+		.owl-prev {
+			left: 0;
+		}
+		
+		.owl-next {
+			right: 0;
+		}
+		
+		.eltdf-prev-icon,
+		.eltdf-next-icon {
+			position: relative;
+			display: inline-block;
+			vertical-align: middle;
+			color: $default-heading-color;
+			@include eltdfTransition(color .2s ease-out);
+			
+			.eltdf-icon-arrow {
+				position: relative;
+				display: inline-block;
+				vertical-align: middle;
+				font-size: 20px;
+				width: 63px;
+				height: 63px;
+				line-height: 63px;
+				background-color: #fff;
+				text-align: center;
+				
+				&:before {
+					display: block;
+					line-height: inherit;
+				}
+			}
+		}
+	}
+	
+	.owl-dots {
+		text-align: center;
+		margin: 16px 0 0;
+		
+		.owl-dot {
+			display: inline-block;
+			vertical-align: middle;
+			
+			span {
+				display: inline-block;
+				vertical-align: middle;
+                height: 11px;
+                width: 11px;
+                @include eltdfTransform(scale(0.63));
+				border-radius: 3em;
+				background-color: #333;
+				@include eltdfTransition(all .25s);
+				box-sizing: border-box;
+			}
+			
+			&:hover,
+			&.active {
+				
+				span {
+                    @include eltdfTransform(scale(1));
+                    @include eltdfTransition(all .3s cubic-bezier(.38,3,.57,1.1));
+				}
+			}
+		}
+	}
+	
+	.owl-carousel .owl-item img {
+		-webkit-transform: translateZ(0); //chrome text cut off fix
+	}
+}
+/* ==========================================================================
+   #Global Owl Slider - end
+   ========================================================================== */
+
+/* ==========================================================================
+   #404 styles - start
+   ========================================================================== */
+
+.eltdf-404-page {
+
+	.eltdf-grid{
+		height: inherit;
+	}
+
+    &.eltdf-wrapper {
+        padding: 0 !important;
+    }
+    
+    .eltdf-content {
+        height: 100vh;
+        background-color: #333;
+    }
+
+    .eltdf-content-inner {
+        position: relative;
+        display: table;
+        height: 100%;
+        width: 100%;
+    }
+
+    .eltdf-page-not-found {
+        position: relative;
+        display: table-cell;
+        width: 100%;
+        height: 100%;
+        vertical-align: middle;
+        text-align: left;
+
+        .eltdf-page-not-found-title {
+        	color: #fff;
+            margin: 0;
+        }
+	
+	    .eltdf-page-not-found-subtitle {
+        	color: #fff;
+            margin: 3px 0 0;
+        }
+	    
+	    .eltdf-page-not-found-text {
+        	color: #fff;
+        	font-size: 20px;
+		    margin: 19px 0 0;
+		    width: 50%;
+
+		    @media only screen and (min-width: 1401px){
+			    width: 32%;
+			}
+	    }
+
+        .eltdf-btn {
+            margin: 30px 0 0;
+        }
+    }
+
+    @include ipad-portrait {
+
+        .eltdf-page-not-found {
+            padding: 40px 30px;
+        }
+    }
+}
+
+/* ==========================================================================
+   #404 styles - end
+   ========================================================================== */
+
+/* ==========================================================================
+   #Back to Top styles - start
+   ========================================================================== */
+#eltdf-back-to-top {
+    position: fixed;
+    width: 41px;
+    right: 25px;
+    bottom: 25px;
+    margin: 0;
+    z-index: 10000;
+    opacity: 0;
+    visibility: hidden;
+    @include eltdfTransition(all .2s);
+    @include eltdfTransform(translateZ(0));
+
+    &.off {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    &.on {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    > span {
+        display: block;
+        position: relative;
+        overflow: hidden;
+        width: 43px;
+        height: 43px;
+        line-height: 43px;
+        font-size: 17px;
+        text-align: center;
+        color: #fff;
+        background-color: $first-main-color;
+        border: 1px solid $first-main-color;
+
+        i {
+            @include eltdfTransition(.2s ease);
+        }
+
+        &:after {
+            content: 'TOP';
+            position: absolute;
+            top: 1px;
+            left: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            opacity: 0;
+            @include eltdfTransition(0.2s);
+        }
+    }
+
+    &:hover {
+        span:after {
+            opacity: 1;
+            @include eltdfTransition(0.45s .05s);
+        }
+
+        i {
+            opacity: 0;
+            @include eltdfTransform(translateY(-15px));
+        }
+    }
+}
+/* ==========================================================================
+   #Back to Top styles - end
+   ========================================================================== */
+
+/* ==========================================================================
+   #Self Hosted Video styles - begin
+   ========================================================================== */
+.eltdf-self-hosted-video-holder {
+    .eltdf-video-wrap {
+        .mejs-container,
+        .mejs-overlay-play {
+            height: 100% !important; /*!important because of the inline style*/
+            width: 100% !important; /*!important because of the inline style*/
+        }
+    }
+}
+/* ==========================================================================
+   #Self Hosted Video styles - end
+   ========================================================================== */

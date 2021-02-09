@@ -1,0 +1,22 @@
+/* ==========================================================================
+   Default WordPress widgets styles - begin
+   ========================================================================== */
+
+.widget {
+    margin: 0 0 $widget-bottom-margin;
+    padding: 0;
+
+    .eltdf-widget-title-holder {
+        margin-bottom: $widget-title-margin-bottom;
+
+        .eltdf-widget-title {
+            color: $widget-heading-color;
+        }
+
+        .eltdf-separator {
+            border-color: $widget-text-color;
+            border-bottom-width: 3px;
+            width: 30px;
+        }
+    }
+}

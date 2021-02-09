@@ -1,0 +1,37 @@
+@include ipad-landscape{
+
+	body.eltdf-sidebar-enabled{
+
+		.eltdf-page-content-holder,
+		.eltdf-page-content-holder.eltdf-grid-col-push-3,
+		.eltdf-page-content-holder.eltdf-grid-col-push-4{
+
+			.eltdf-page-content-holder-inner{
+				padding: 0;
+			}
+		}
+
+		.eltdf-page-content-holder .eltdf-content-sidebar-upgrade{
+
+			&:after{
+				display: none;
+			}
+		}
+	}
+
+	.eltdf-sidebar-holder,
+	.eltdf-sidebar-holder.eltdf-grid-col-pull-8,
+	.eltdf-sidebar-holder.eltdf-grid-col-pull-9{
+
+		aside.eltdf-sidebar {
+			padding: 30px 0 0;
+
+			&:after{
+				width: auto;
+				top: 0 !important; //because of the per page styles
+				left: -50%;
+				right: -50%;
+			}
+		}
+	}
+}

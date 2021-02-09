@@ -1,0 +1,101 @@
+/* Single posts navigation styles - begin
+    ====================================================================== */
+
+.eltdf-blog-single-navigation {
+    position: relative;
+    display: table;
+    width: 100%;
+    vertical-align: middle;
+    padding: 0;
+    clear: both;
+    box-sizing: border-box;
+
+    .eltdf-blog-single-navigation-inner {
+        padding: 78px 0 30px;
+    }
+
+    .eltdf-blog-single-prev,
+    .eltdf-blog-single-next {
+        color: $default-heading-color;
+        max-width: 50%;
+
+        .eltdf-blog-single-nav-mark {
+            font-size: 17px;
+            line-height: inherit;
+            color: inherit;
+
+            &:before {
+                display: block;
+                line-height: inherit;
+            }
+        }
+
+        .eltdf-blog-single-nav-label {
+            color: $default-text-color;
+            display: inline-block;
+            margin-top: 7px;
+        }
+
+        .eltdf-blog-single-nav-title-text{
+        	display: block;
+        }
+
+        &:hover {
+			.eltdf-blog-single-nav-title{
+				color: $first-main-color;
+			}
+        }
+    }
+
+    .eltdf-blog-single-nav-title{
+    	margin: 0;
+    	@include eltdfTransition(color .15s ease-out);
+    }
+
+    .eltdf-blog-single-prev {
+        float: left;
+
+        .eltdf-blog-single-nav-label,
+        .eltdf-blog-single-nav-title-text{
+        	margin-left: 34px;
+        }
+
+        .eltdf-blog-single-nav-mark {
+        	float: left;
+        }
+    }
+
+    .eltdf-blog-single-next {
+        float: right;
+        text-align: right;
+
+        .eltdf-blog-single-nav-label,
+        .eltdf-blog-single-nav-title-text{
+        	margin-right: 34px;
+        }
+
+        .eltdf-blog-single-nav-mark {
+        	float: right;
+        }
+    }
+}
+
+.eltdf-single-links-pages {
+    clear: both;
+    margin: 20px 0 5px;
+
+    .eltdf-single-links-pages-inner {
+
+        > a,
+        > span {
+            position: relative;
+            display: inline-block;
+            vertical-align: middle;
+            font-size: 18px;
+            font-weight: 600;
+            margin: 0 15px 5px 0;
+        }
+    }
+}
+/* Single posts navigation styles - end
+    ====================================================================== */

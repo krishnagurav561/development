@@ -1,0 +1,53 @@
+/* ==========================================================================
+# Search opener - begin
+========================================================================== */
+
+.eltdf-search-opener {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 20px;
+    color: $default-heading-color;
+    margin: 0 14px;
+
+    &:hover {
+        color: $first-main-color;
+    }
+
+    .eltdf-search-opener-wrapper {
+
+        > * {
+            position: relative;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .eltdf-icon-font-awesome,
+        .eltdf-icon-font-elegant,
+        .eltdf-icon-ion-icon {
+            line-height: inherit;
+        }
+    }
+}
+
+.eltdf-light-header .eltdf-page-header > div:not(.eltdf-sticky-header):not(.fixed) .eltdf-search-opener,
+.eltdf-light-header .eltdf-top-bar .eltdf-search-opener {
+    color: $header-light-color !important; //Color can be set inline from widget opener
+
+    &:hover {
+        color: $header-light-hover-color !important;
+    }
+}
+
+.eltdf-dark-header .eltdf-page-header > div:not(.eltdf-sticky-header):not(.fixed) .eltdf-search-opener,
+.eltdf-dark-header .eltdf-top-bar .eltdf-search-opener {
+    color: $header-dark-color !important; //Color can be set inline from widget opener
+
+    &:hover {
+        color: $header-dark-hover-color !important;
+    }
+}
+
+/* ==========================================================================
+# Search opener - end
+========================================================================== */

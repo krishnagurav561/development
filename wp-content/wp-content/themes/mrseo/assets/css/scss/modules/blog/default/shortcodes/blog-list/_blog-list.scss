@@ -1,0 +1,88 @@
+/* ==========================================================================
+   Blog List shortcode Common style - begin
+   ========================================================================== */
+
+.eltdf-blog-list-holder {
+    @include eltdfRelativeHolderLayout();
+    clear: both;
+
+    .eltdf-blog-list {
+        @include eltdfRelativeHolderLayout();
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+	
+	.eltdf-bl-item {
+		@include eltdfRelativeHolderLayout();
+		padding: 0;
+		margin: 0;
+		box-sizing: border-box;
+	}
+	
+	.eltdf-bli-inner {
+		@include eltdfRelativeHolderLayout();
+	}
+	
+	.eltdf-bli-content {
+		@include eltdfRelativeHolderLayout();
+		box-sizing: border-box;
+	}
+	
+	.eltdf-post-image {
+		@include eltdfRelativeHolderLayout();
+		
+		a, img {
+			display: block;
+		}
+	}
+	
+	.eltdf-bli-excerpt {
+		@include eltdfRelativeHolderLayout();
+		margin: 0;
+
+        .eltdf-post-excerpt {
+            &:after {
+                content: '...';
+            }
+        }
+	}
+
+    .eltdf-blog-list-button {
+        margin: 26px 0 0;
+    }
+	
+	/***** Columns Space style - begin *****/
+	
+	$columns_space_label: ('no', 'tiny', 'small', 'normal');
+	$columns_space: (0, 5, 10, 15);
+	
+	@for $i from 0 to length($columns_space_label) {
+		&.eltdf-bl-#{nth($columns_space_label,$i+1)}-space {
+			$column_width: nth($columns_space, $i+1);
+			$column_width_margin: $column_width * 2;
+			
+			.eltdf-bl-wrapper {
+				@if($column_width == 0) {
+					margin: 0;
+				} @else {
+					margin: 0 -#{$column_width}px;
+				}
+			}
+			
+			.eltdf-bl-item {
+				padding: 0 #{$column_width}px;
+				margin: 0 0 #{$column_width_margin}px;
+
+				&:last-child{
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
+	
+	/***** Columns Space style - end *****/
+}
+/* ==========================================================================
+   Blog List shortcode Common style - end
+   ========================================================================== */

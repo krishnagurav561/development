@@ -1,0 +1,113 @@
+/* Woocommerce Product Page shortcode responsive style - begin
+========================================================================== */
+
+
+@include ipad-landscape {
+    
+    div.woocommerce {
+
+        > .single-product {
+        
+	        .eltdf-single-product-content {
+	            
+	            .eltdf-single-product-images,
+	            .eltdf-single-product-summary {
+	                float: none;
+	                width: 100%;
+	                padding: 0;
+	            }
+	            
+	            .eltdf-single-product-summary {
+	                margin: 30px 0 0;
+	            }
+	        }
+	        
+	        .woocommerce-tabs {
+	            
+	            ul.tabs > li a {
+	                padding: 12px 20px;
+	            }
+	        }
+	    }
+	}
+}
+
+@include phone-landscape {
+
+    div.woocommerce {
+
+        > .single-product {
+
+	        .eltdf-single-product-content {
+	            
+	            .images {
+	                
+	                .thumbnails {
+	                    
+	                    &.columns-2 {
+	                        
+	                        a {
+	                            float: none;
+	                            width: 100%;
+	                        }
+	                    }
+	                    
+	                    &.columns-4 {
+	                        
+	                        a {
+	                            width: 50%;
+	                        }
+	                    }
+	                }
+	            }
+
+
+				button.single_add_to_cart_button{
+					display: block;
+					margin-top: 20px;
+				}
+
+	        }
+
+	        .woocommerce-tabs {
+	            
+	            ul.tabs > li{
+					display: block;
+					margin-bottom: 2px;
+
+					a{
+						padding-left: 27px;
+					}
+	            }
+	        }
+        }
+    }
+}
+
+@include phone-portrait {
+
+    div.woocommerce {
+
+        > .single-product {
+
+            .woocommerce-tabs {
+                margin: 34px 0 0;
+
+                ul.tabs {
+
+                    > li {
+                        float: none;
+                        width: 100%;
+                        padding: 11px 0 0;
+
+                        a {
+                            display: block;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/* Woocommerce Product Page shortcode responsive style - end
+========================================================================== */

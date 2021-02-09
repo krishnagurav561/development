@@ -1,0 +1,34 @@
+/* ==========================================================================
+   Blog List widget style - begin
+   ========================================================================== */
+
+.widget.eltdf-blog-list-widget {
+    margin: 0 0 20px;
+
+    .eltdf-blog-list-holder{
+    	padding: 5px;
+    }
+
+    > h4 {
+        margin: 0 0 15px;
+    }
+
+    .eltdf-post-title a{
+    	color: inherit;
+
+    	&:hover{
+    		color: $first-main-color;
+    	}
+    }
+
+    footer .eltdf-footer-top &,
+    .eltdf-top-bar & {
+
+        > h2 {
+            margin: 0 0 8px;
+        }
+    }
+}
+/* ==========================================================================
+   Blog List widget style - end
+   ========================================================================== */
